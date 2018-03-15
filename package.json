@@ -2,7 +2,6 @@
   "name": "asleepgame",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rayaraya.github.io/asleepgame",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.3",
     "react": "^16.2.0",
