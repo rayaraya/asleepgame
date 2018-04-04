@@ -1,17 +1,17 @@
-import World from './World'
+import World from './World';
 
 class WorldDirector {
-    constructor (world = new World()) {
-        this._world = world;
-    }
+  constructor(world = new World()) {
+    this._world = world;
+  }
 
-    constructNewWorld() {
+  constructNewWorld() {
 
-    }
+  }
 
-    get world() {
-        return this._world;
-    }
+  get world() {
+    return this._world;
+  }
 }
 
-export default WorldDirector
+export default WorldDirector;

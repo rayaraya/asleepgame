@@ -1,1 +1,1 @@
-import GameSession from './components/GameSession'
+import GameSession from './components/GameSession';

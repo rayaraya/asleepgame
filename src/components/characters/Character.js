@@ -1,13 +1,14 @@
-import GameObject from '../world_components/GameObject'
+import GameObject from '../world_components/GameObject';
 
 class Character extends GameObject {
-    constructor(location) {
-        this._location = location;
-    }
+  constructor(props) {
+    super(props);
+    this._location = props.location;
+  }
 
-    get location() {
-        return location;
-    }
+  get location() {
+    return this._location;
+  }
 }
 
-export default Character 
+export default Character;

@@ -1,13 +1,13 @@
-import GameObject from "../world_components/GameObject";
+import GameObject from '../world_components/GameObject';
 
 class Location extends GameObject {
-    constructor(props) {
-        super(props);
-        this._view = props.view;
-    }
-    enter() {
+  constructor(props) {
+    super(props);
+    this._view = props.view;
+  }
+  enter() {
 
-    }
+  }
 }
 
-export default GameObject
+export default Location;

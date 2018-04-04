@@ -1,7 +1,7 @@
-import World from './World'
+import World from './World';
 
 class SleepWorld extends World {
 
 }
 
-export default SleepWorld
+export default SleepWorld;

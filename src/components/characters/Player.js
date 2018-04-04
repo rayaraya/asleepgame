@@ -1,7 +1,7 @@
-import Character from "./Character";
+import Character from './Character';
 
 class Player extends Character {
-    
+
 }
 
-export default Character
+export default Character;

@@ -1,33 +1,33 @@
 class World {
-    constructor() {
-        this._locations = [];
-        this._events = [];
-        this._characters = [];
-    }
+  constructor() {
+    this._locations = [];
+    this._events = [];
+    this._characters = [];
+  }
 
-    get locations() {
-        return this._locations;
-    }
+  get locations() {
+    return this._locations;
+  }
 
-    set location(location) {
-        this._locations.push(location);
-    }
+  set location(location) {
+    this._locations.push(location);
+  }
 
-    get events() {
-        return this._events;
-    }
+  get events() {
+    return this._events;
+  }
 
-    set event(wevent) {
-        this._events.push(wevent);
-    }
+  set event(wevent) {
+    this._events.push(wevent);
+  }
 
-    get characters() {
-        return this._characters;
-    }
+  get characters() {
+    return this._characters;
+  }
 
-    set character(character) {
-        this._characters.push(character);
-    }
+  set character(character) {
+    this._characters.push(character);
+  }
 }
 
-export default World
+export default World;
