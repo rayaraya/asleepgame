@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 class LocationList extends Component {
   render() {
-    const { locations } = this.props;
+    const { locations, changeloc } = this.props.params;
     const locationsList = locations.map(loc =>
-        <button key ={loc.name} type="button" className="btn btn-light" >
+        <button onClick={changeloc.bind(this, loc)} key={loc.name} type="button" className="btn btn-light" >
                 {loc.name}
         </button>);
     return (

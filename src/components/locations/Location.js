@@ -5,6 +5,10 @@ class Location extends GameObject {
     super(props);
     this._view = props.view;
   }
+
+  get view() {
+    return this._view;
+  }
   enter() {
 
   }

@@ -11,19 +11,29 @@ class Elements extends Component {
       events: props.world.events,
       characters: props.world.characters,
       notifications: props.world.notifications,
-      currentLocation: props.world.currentLocation,
+      currentLocation: props.world.locations[0],
     };
+    this.changeLocation = this.changeLocation.bind(this);
   }
 
+  changeLocation(loc) {
+    this.setState(prev => ({
+      currentLocation: loc,
+    }));
+  }
   render() {
     const { locations, notifications, currentLocation } = this.state;
+    const params = {
+      locations,
+      changeloc: this.changeLocation,
+    };
     return (
             <div>
                 <div className="card-group">
                     <div className="card text-center text-white bg-secondary mb-3 ">
                         <div className="card-header">
                             <div className="btn-group btn-group-lg">
-                                <LocationList locations = { locations }/>
+                                <LocationList params = { params }/>
                             </div>
                         </div>
                         <div className="card-body">

@@ -8,6 +8,8 @@ import LocationBuilder from '../builders/LocationBuilder';
 import CharacterBuilder from '../builders/CharacterBuilder';
 import SleepWorld from './SleepWorld';
 import Elements from './Elements';
+import ChapelView from './ChapelView';
+import ForestView from './ForestView';
 
 class SleepWorldDirector extends WorldDirector {
   constructor(world = new SleepWorld()) {
@@ -69,13 +71,13 @@ class SleepWorldDirector extends WorldDirector {
     const chapel = this.loBuilder.buildUnit({
       name: 'The Chapel',
       world: this.world,
-      view: 'here will be class with control buttons',
+      view: ChapelView,
     });
 
     const forest = this.loBuilder.buildUnit({
       name: 'The Forest',
       world: this.world,
-      view: 'here will be class with something else',
+      view: ForestView,
     });
 
     const player = this.chBuilder.buildUnit({
