@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import LocationList from './LocationList';
+import NotificationList from './NotificationList';
 
 class Elements extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      locations: props.elements.locations,
-      events: props.elements.events,
-      characters: props.elements.characters,
+      locations: props.world.locations,
+      events: props.world.events,
+      characters: props.world.characters,
+      notifications: props.world.notifications,
+      currentLocation: props.world.currentLocation,
     };
   }
 
   render() {
-    const { locations } = this.state;
+    const { locations, notifications, currentLocation } = this.state;
     return (
             <div>
                 <div className="card-group">
@@ -23,15 +26,13 @@ class Elements extends Component {
                             </div>
                         </div>
                         <div className="card-body">
+                            <CurrentLocation currentLocation = { currentLocation } />
                         </div>
                     </div>
-
                         <div className="card text-left text-white bg-light mb-3">
                         <div className="card-body">
                             <div className="btn-group btn-group-lg">
-                            <div className="alert alert-light">
-                                Notification example
-                                </div>
+                            <NotificationList state = { notifications } />
                             </div>
                         </div>
                     </div>

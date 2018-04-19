@@ -6,6 +6,8 @@ class Event extends GameObject {
     this._description = props.description;
     this._frequency = props.frequency;
     this._isRepeated = props.isRepeated;
+    this._world = props.world;
+    this._delay = props.delay;
   }
 
   get description() {
@@ -13,9 +15,13 @@ class Event extends GameObject {
   }
 
   happen() {
-    console.log(this._description);
+    /* do delay logic */
     if (this._isRepeated) {
-      /* do more complex logic */
+      const timer = setInterval(() => {
+        this._world.notification = this._description;
+      }, this._frequency * 1000);
+    } else {
+      this._world.notification = this._description;
     }
   }
 }

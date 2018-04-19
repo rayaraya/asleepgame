@@ -4,14 +4,15 @@ class LocationList extends Component {
   render() {
     const { locations } = this.props;
     const locationsList = locations.map(loc =>
-            <div key={ loc.name }>
-                <button type="button" className="btn btn-light" >
-                        { loc.name }
-                </button>
-            </div>);
+        <button key ={loc.name} type="button" className="btn btn-light" >
+                {loc.name}
+        </button>);
     return (
-            <div>{locationsList}</div>
-    );
+        <div>
+                <div className="btn-group" role="group" aria-label="Basic example">
+                        { locationsList }
+                </div>
+        </div>);
   }
 }
 

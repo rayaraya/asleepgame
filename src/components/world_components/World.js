@@ -3,6 +3,7 @@ class World {
     this._locations = [];
     this._events = [];
     this._characters = [];
+    this._notifications = [];
   }
 
   get locations() {
@@ -27,6 +28,17 @@ class World {
 
   set character(character) {
     this._characters.push(character);
+  }
+
+  get notifications() {
+    return this._notifications;
+  }
+
+  set notification(not) {
+    this._notifications.push(not);
+    if (this._notifications.length > 8) {
+      this._notifications.shift();
+    }
   }
 }
 

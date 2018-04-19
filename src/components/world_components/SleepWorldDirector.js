@@ -23,6 +23,7 @@ class SleepWorldDirector extends WorldDirector {
       locations: world.locations,
       events: world.events,
       characters: world.characters,
+      notififcations: world.notififcations,
     };
     class Game extends Component {
       render() {
@@ -31,7 +32,7 @@ class SleepWorldDirector extends WorldDirector {
                         <div className="navbar navbar-expand-lg navbar-light bg-light">
                             <h1> ASLEEPGAME </h1>
                         </div>
-                        <Elements elements={state} />
+                        <Elements world={ world } />
                     </div>
         );
       }
@@ -44,15 +45,23 @@ class SleepWorldDirector extends WorldDirector {
 
     const beginning = this.evBuilder.buildUnit({
       name: 'beginning',
-      description: 'blabla about beginning',
+      description: 'You see something beautiful.. you feel...',
       isRepeated: false,
       world: this.world,
+    });
+
+    const oldManinput = this.evBuilder.buildUnit({
+      name: 'oldmaninput',
+      description: 'An old man is asleep on the stone',
+      isRepeated: false,
+      world: this.world,
+      delay: 2,
     });
 
     const storm = this.evBuilder.buildUnit({
       name: 'storm',
       frequency: 10,
-      description: 'a roll of thunder... the darkness thickens',
+      description: 'A roll of thunder... the darkness thickens',
       isRepeated: true,
       world: this.world,
     });
@@ -61,6 +70,12 @@ class SleepWorldDirector extends WorldDirector {
       name: 'The Chapel',
       world: this.world,
       view: 'here will be class with control buttons',
+    });
+
+    const forest = this.loBuilder.buildUnit({
+      name: 'The Forest',
+      world: this.world,
+      view: 'here will be class with something else',
     });
 
     const player = this.chBuilder.buildUnit({
@@ -74,6 +89,7 @@ class SleepWorldDirector extends WorldDirector {
     });
 
     beginning.happen();
+    oldManinput.happen();
     storm.happen();
   }
 }
