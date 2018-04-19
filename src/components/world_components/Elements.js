@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LocationList from './LocationList';
 import NotificationList from './NotificationList';
+import CurrentLocation from './CurrentLocation';
 
 class Elements extends Component {
   constructor(props) {
