@@ -1,22 +1,19 @@
 import GameObject from '../world_components/GameObject';
 
-class Location extends GameObject {
+class Command extends GameObject {
   constructor(props) {
     super(props);
-    this._view = props.view;
     this._world = props.world;
-  }
-
-  get view() {
-    return this._view;
+    props.world.command = this;
   }
 
   get world() {
     return this._world;
   }
-  enter() {
 
+  execute() {
   }
 }
 
-export default Location;
+export default Command;
+

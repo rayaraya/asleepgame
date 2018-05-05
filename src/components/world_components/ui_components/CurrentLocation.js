@@ -5,11 +5,11 @@ import ForestView from './ForestView';
 class CurrentLocation extends Component {
   render() {
     const location = this.props.currentLocation;
-    const { view } = location;
+    const { view, world } = location;
     const LocView = view;
     return (
           <div>
-              <LocView />
+              <LocView world={world} />
           </div>);
   }
 }

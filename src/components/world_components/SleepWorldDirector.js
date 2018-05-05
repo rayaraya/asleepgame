@@ -7,9 +7,10 @@ import EventBuilder from '../builders/EventBuilder';
 import LocationBuilder from '../builders/LocationBuilder';
 import CharacterBuilder from '../builders/CharacterBuilder';
 import SleepWorld from './SleepWorld';
-import Elements from './Elements';
-import ChapelView from './ChapelView';
-import ForestView from './ForestView';
+import Elements from './ui_components/Elements';
+import ChapelView from './ui_components/ChapelView';
+import ForestView from './ui_components/ForestView';
+import SendCommand from '../commands/SendCommand';
 
 class SleepWorldDirector extends WorldDirector {
   constructor(world = new SleepWorld()) {
@@ -26,6 +27,7 @@ class SleepWorldDirector extends WorldDirector {
       events: world.events,
       characters: world.characters,
       notififcations: world.notififcations,
+      commands: world.commands,
     };
     class Game extends Component {
       render() {
@@ -88,6 +90,12 @@ class SleepWorldDirector extends WorldDirector {
     const oldMan = this.chBuilder.buildUnit({
       name: 'Old Man',
       location: chapel,
+    });
+
+    const tryToWakeUpCommand = new SendCommand({
+      world: this.world,
+      name: 'tryToWakeUpCommand',
+      notification: 'A bad feeling is coming. You turn away.',
     });
 
     beginning.happen();

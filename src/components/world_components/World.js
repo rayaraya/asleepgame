@@ -4,6 +4,7 @@ class World {
     this._events = [];
     this._characters = [];
     this._notifications = [];
+    this._commands = [];
   }
 
   get locations() {
@@ -39,6 +40,14 @@ class World {
     if (this._notifications.length > 6) {
       this._notifications.shift();
     }
+  }
+
+  get commands() {
+    return this._commands;
+  }
+
+  set command(com) {
+    this._commands.push(com);
   }
 }
 
