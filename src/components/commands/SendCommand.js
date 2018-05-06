@@ -3,11 +3,13 @@ import Command from './Command';
 class SendCommand extends Command {
   constructor(props) {
     super(props);
-    this._notification = props.notification;
+    this._notifications = props.notifications;
   }
 
   execute() {
-    this._world.notification = this._notification;
+    this._notifications.forEach((not) => {
+      this._world.notification = not;
+    });
   }
 }
 

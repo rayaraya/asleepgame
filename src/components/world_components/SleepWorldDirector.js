@@ -11,6 +11,7 @@ import Elements from './ui_components/Elements';
 import ChapelView from './ui_components/ChapelView';
 import ForestView from './ui_components/ForestView';
 import SendCommand from '../commands/SendCommand';
+import AddAppleCommand from '../commands/AddAppleCommand';
 
 class SleepWorldDirector extends WorldDirector {
   constructor(world = new SleepWorld()) {
@@ -85,17 +86,30 @@ class SleepWorldDirector extends WorldDirector {
     const player = this.chBuilder.buildUnit({
       name: 'Player',
       location: chapel,
+      world: this.world,
     });
 
     const oldMan = this.chBuilder.buildUnit({
       name: 'Old Man',
       location: chapel,
+      world: this.world,
     });
 
     const tryToWakeUpCommand = new SendCommand({
       world: this.world,
       name: 'tryToWakeUpCommand',
-      notification: 'A bad feeling is coming. You turn away.',
+      notifications: ['A bad feeling is coming. You turn away.'],
+    });
+
+    const tryToLookCommand = new SendCommand({
+      world: this.world,
+      name: 'tryToLookCommand',
+      notifications: ['The friendly wind whistles to the trees...', 'A red deer took a leaf from a brush...'],
+    });
+
+    const pickUpAppleCommand = new AddAppleCommand({
+      world: this.world,
+      name: 'pickUpAppleCommand',
     });
 
     beginning.happen();
