@@ -34,11 +34,13 @@ class Elements extends Component {
             <div>
                 <div className="card-group">
                     <div className="card text-center text-white bg-secondary mb-3">
-                        <div className="card-header">
-                            <div className="btn-group btn-group-lg">
+                        <div className="card-header ">
+                            <div className="btn-group btn-group-lg ">
                                 <LocationList params = { params }/>
                             </div>
-                            <ApplesCounter world = {this.props.world}/>
+                            <button type="button" className="btn btn-light bg-secondary float-right mr-2">
+                                <ApplesCounter world = {this.props.world}/>
+                            </button>
                         </div>
                         <div className="card-body">
                             <CurrentLocation currentLocation = { currentLocation } />

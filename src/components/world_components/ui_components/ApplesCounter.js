@@ -11,9 +11,7 @@ class ApplesCounter extends Component {
 
   render() {
     return (<div>
-        <button type="button" className="btn btn-light bg-secondary float-right">
-            Apples <span className="badge badge-light">{this.state.counter}</span>
-        </button>
+         Apples <span className="badge badge-light">{this.state.counter}</span>
       </div>);
   }
 }

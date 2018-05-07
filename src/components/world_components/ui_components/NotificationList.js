@@ -16,7 +16,7 @@ class NotificationList extends Component {
   render() {
     const { notifications } = this.state;
     const notificationList = notifications.map(not =>
-        <div key ={Date.now() + Math.random() + Math.random()} className="alert alert-light">
+        <div key ={Math.random()} className="alert alert-light">
             {not}
         </div>);
     return (

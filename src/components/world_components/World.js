@@ -37,7 +37,7 @@ class World {
 
   set notification(not) {
     this._notifications.push(not);
-    if (this._notifications.length > 6) {
+    if (this._notifications.length > 8) {
       this._notifications.shift();
     }
   }
