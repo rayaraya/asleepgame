@@ -34,7 +34,7 @@ class ChapelView extends Component {
     }));
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     if (this.state.disableWakeUp === true) {
       const timer = setTimeout(() => {
         this.setState(prevState => ({
@@ -66,7 +66,7 @@ class ChapelView extends Component {
                 {'wake up the old man'}
         </button>
         <button id="look into window" type="button" className="btn btn-light" disabled={this.state.disableLook}
-        onClick={(event) => { this.lookCommand.execute(); this.lockLookButton(); }}>
+       onClick={(event) => { this.lookCommand.execute(); this.lockLookButton(); }}>
                 {'look into window'}
         </button>
         </div>
@@ -74,4 +74,6 @@ class ChapelView extends Component {
   }
 }
 
+// export default ReactTimeout(ChapelView);
 export default ChapelView;
+

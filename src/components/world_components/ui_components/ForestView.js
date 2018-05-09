@@ -4,7 +4,6 @@ class ForestView extends Component {
   constructor(props) {
     super(props);
     this.commands = props.world.commands;
-
     this.pickUpCommand = this.commands.find(element => (element.name === 'pickUpAppleCommand'));
 
     this.state = {
@@ -22,7 +21,7 @@ class ForestView extends Component {
     }));
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     if (this.state.disablePickUp === true) {
       const timer = setTimeout(() => {
         this.setState(prevState => ({
@@ -41,7 +40,7 @@ class ForestView extends Component {
     return (<div>
       <div className="btn-group">
         <button id="pick up an apple" type="button" className="btn btn-light" disabled={this.state.disablePickUp}
-        onClick={(event) => { this.pickUpCommand.execute(); this.lockPickUpButton(); }}>
+       onClick={(event) => { this.pickUpCommand.execute(); this.lockPickUpButton(); }}>
                 {'pick up an apple'}
         </button>
 
