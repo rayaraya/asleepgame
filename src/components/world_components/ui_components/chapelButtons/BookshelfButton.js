@@ -23,7 +23,7 @@ class BookshelfButton extends Component {
     return (<div>
           <button id="look at bookshelf" type="button" className="btn btn-light float-right mr-5"
        // onClick={(event) => { this.command.execute(); }}>
-           >     {'look at bookshelf'}
+           >     {'look at the bookshelf'}
         </button>
       </div>);
   }

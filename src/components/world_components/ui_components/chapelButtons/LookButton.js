@@ -23,7 +23,7 @@ class LookButton extends Component {
     return (<div>
           <button id="look into window" type="button" className="btn btn-light float-right mr-5" disabled={this.state.disable}
        onClick={(event) => { this.command.execute(); }}>
-                {'look into window'}
+                {'look into the window'}
         </button>
       </div>);
   }
