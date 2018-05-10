@@ -6,6 +6,7 @@ class Player extends Character {
     super(props);
     this._apples = [];
     this._appleCakes = [];
+    this._books = [];
   }
 
   set apple(apple) {
@@ -14,6 +15,14 @@ class Player extends Character {
 
   get apples() {
     return this._apples;
+  }
+
+  set book(book) {
+    this._books.push(book);
+  }
+
+  get books() {
+    return this._books;
   }
 
   set appleCake(aCake) {

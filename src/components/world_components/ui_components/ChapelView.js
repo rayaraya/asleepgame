@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import WakeUpButton from './chapelButtons/WakeUpButton';
 import LookButton from './chapelButtons/LookButton';
 import MakeCakeButton from './chapelButtons/MakeCakeButton';
+import BookshelfButton from './chapelButtons/BookshelfButton';
 
 class ChapelView extends Component {
   constructor(props) {
@@ -15,6 +16,8 @@ class ChapelView extends Component {
         <WakeUpButton world = {this.world} />
         <LookButton world = {this.world} />
         <MakeCakeButton world = {this.world} />
+        <p></p>
+        <BookshelfButton world = {this.world} />
     </div>);
   }
 }
