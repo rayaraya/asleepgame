@@ -1,3 +1,5 @@
+import ButtonsState from './ButtonsState';
+
 class World {
   constructor() {
     this._locations = [];
@@ -5,6 +7,7 @@ class World {
     this._characters = [];
     this._notifications = [];
     this._commands = [];
+    this._buttonsDisableState = new ButtonsState();
   }
 
   get locations() {
@@ -36,9 +39,9 @@ class World {
   }
 
   set notification(not) {
-    this._notifications.push(not);
+    this._notifications.unshift(not);
     if (this._notifications.length > 8) {
-      this._notifications.shift();
+      this._notifications.pop();
     }
   }
 
@@ -48,6 +51,10 @@ class World {
 
   set command(com) {
     this._commands.push(com);
+  }
+
+  get buttonsDisableState() {
+    return this._buttonsDisableState;
   }
 }
 

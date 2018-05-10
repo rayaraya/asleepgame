@@ -10,6 +10,25 @@ class SendCommand extends Command {
     this._notifications.forEach((not) => {
       this._world.notification = not;
     });
+
+    this.button.setState(prevState => ({
+      disable: true,
+    }));
+
+    const newState = {};
+    this.buttonId = this.button.id;
+    newState[this.buttonId] = true;
+    this.world.buttonsDisableState.setState = newState;
+
+    setTimeout(() => {
+      newState[this.buttonId] = false;
+      this.world.buttonsDisableState.setState = newState;
+      if (this.button !== null) {
+        this.button.setState(prevState => ({
+          disable: false,
+        }));
+      }
+    }, 5000);
   }
 }
 

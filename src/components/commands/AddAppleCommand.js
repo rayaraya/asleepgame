@@ -14,6 +14,25 @@ class AddAppleCommand extends Command {
       name: 'apple',
     });
     this.aCounter.setState({ counter: this.apples.length });
+
+    this.button.setState(prevState => ({
+      disable: true,
+    }));
+
+    const newState = {};
+    this.buttonId = this.button.id;
+    newState[this.buttonId] = true;
+    this.world.buttonsDisableState.setState = newState;
+
+    setTimeout(() => {
+      newState[this.buttonId] = false;
+      this.world.buttonsDisableState.setState = newState;
+      if (this.button !== null) {
+        this.button.setState(prevState => ({
+          disable: false,
+        }));
+      }
+    }, 5000);
   }
 
   set applesCounter(aCounter) {

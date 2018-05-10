@@ -1,50 +1,16 @@
 import React, { Component } from 'react';
+import PickUpButton from './forestButtons/PickUpButton';
 
 class ForestView extends Component {
   constructor(props) {
     super(props);
-    this.commands = props.world.commands;
-    this.pickUpCommand = this.commands.find(element => (element.name === 'pickUpAppleCommand'));
-
-    this.state = {
-      disablePickUp: false,
-      timerLook: 0,
-    };
-
-    this.pickUpCommand.execute = this.pickUpCommand.execute.bind(this.pickUpCommand);
-    this.lockPickUpButton = this.lockPickUpButton.bind(this);
-  }
-
-  lockPickUpButton() {
-    this.setState(prevState => ({
-      disablePickUp: true,
-    }));
-  }
-
-  componentDidUpdate() {
-    if (this.state.disablePickUp === true) {
-      const timer = setTimeout(() => {
-        this.setState(prevState => ({
-          disablePickUp: false,
-          timerLook: timer,
-        }));
-      }, 15000);
-    }
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.timerPickUp);
+    this.world = props.world;
   }
 
   render() {
     return (<div>
-      <div className="btn-group">
-        <button id="pick up an apple" type="button" className="btn btn-light" disabled={this.state.disablePickUp}
-       onClick={(event) => { this.pickUpCommand.execute(); this.lockPickUpButton(); }}>
-                {'pick up an apple'}
-        </button>
-
-        </div>
+      <h3 color='white' align='left'> THE FOREST </h3>
+      <PickUpButton world = {this.world} />
     </div>);
   }
 }

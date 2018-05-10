@@ -12,6 +12,7 @@ import ChapelView from './ui_components/ChapelView';
 import ForestView from './ui_components/ForestView';
 import SendCommand from '../commands/SendCommand';
 import AddAppleCommand from '../commands/AddAppleCommand';
+import MakeCakeCommand from '../commands/MakeCakeCommand';
 
 class SleepWorldDirector extends WorldDirector {
   constructor(world = new SleepWorld()) {
@@ -65,7 +66,7 @@ class SleepWorldDirector extends WorldDirector {
 
     const storm = this.evBuilder.buildUnit({
       name: 'storm',
-      frequency: 10,
+      frequency: 30,
       description: 'A roll of thunder... the darkness thickens',
       isRepeated: true,
       world: this.world,
@@ -112,9 +113,22 @@ class SleepWorldDirector extends WorldDirector {
       name: 'pickUpAppleCommand',
     });
 
+    const makeCakeCommand = new MakeCakeCommand({
+      world: this.world,
+      name: 'makeCakeCommand',
+      notifications: ['The flavor of the cake is spread around...'],
+    });
+
     beginning.happen();
     oldManinput.happen();
     storm.happen();
+
+    this.world.buttonsDisableState.setState = {
+      'wake up the old man': false,
+      'look into window': false,
+      'make an apple cake': false,
+      'pick up an apple': false,
+    };
   }
 }
 

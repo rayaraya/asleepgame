@@ -35,7 +35,7 @@ class Elements extends Component {
                 <div className="card-group">
                     <div className="card text-center text-white bg-secondary mb-3">
                         <div className="card-header ">
-                            <div className="btn-group btn-group-lg ">
+                            <div className="btn-group btn-group-lg ml-5">
                                 <LocationList params = { params }/>
                             </div>
                             <button type="button" className="btn btn-light bg-secondary float-right mr-2">
