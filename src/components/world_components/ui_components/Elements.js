@@ -3,6 +3,8 @@ import LocationList from './LocationList';
 import NotificationList from './NotificationList';
 import CurrentLocation from './CurrentLocation';
 import ApplesCounter from './ApplesCounter';
+import AdditionalView from './AdditionalView';
+
 
 class Elements extends Component {
   constructor(props) {
@@ -13,6 +15,7 @@ class Elements extends Component {
       characters: props.world.characters,
       notifications: props.world.notifications,
       currentLocation: props.world.locations[0],
+      additionalView: null,
     };
     this.changeLocation = this.changeLocation.bind(this);
   }
@@ -24,7 +27,10 @@ class Elements extends Component {
   }
 
   render() {
-    const { locations, notifications, currentLocation } = this.state;
+    const {
+      locations, notifications, currentLocation, additionalView,
+    } = this.state;
+
     const params = {
       locations,
       changeloc: this.changeLocation,
@@ -45,8 +51,9 @@ class Elements extends Component {
                         <div className="card-body">
                             <CurrentLocation currentLocation = { currentLocation } />
                         </div>
+                        <AdditionalView aView = { additionalView }/>
                     </div>
-                        <div className="card text-left text-white bg-light mb-3">
+                    <div className="card text-left text-white bg-light mb-3">
                         <div className="card-body">
                             <div className="btn-group btn-group-lg">
                             <NotificationList state = { notifications } />
